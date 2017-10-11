@@ -7,7 +7,7 @@ exports.up = function (db, callback) {
       id: { type: type.INTEGER },
       title: { type: type.STRING },
       publish_date: { type: type.DATE_TIME },
-      byline: { type: type.STRING }
+      author: { type: type.STRING }
     }
   }, callback)
 }

@@ -1,11 +1,11 @@
 const orm = require('ormnomnom')
 
 class Book {
-  constructor ({id, title, publish_date, byline} = {}) {
+  constructor ({id, title, publishDate, author} = {}) {
     this.id = id
     this.title = title
-    this.publishDate = publish_date
-    this.byline = byline
+    this.publishDate = publishDate
+    this.author = author
   }
 }
 
@@ -13,7 +13,7 @@ const BookObjects = orm(Book, {
   id: orm.joi.number(),
   title: orm.joi.string().required(),
   publish_date: orm.joi.date(),
-  byline: orm.joi.string()
+  author: orm.joi.string()
 })
 
 Book.objects = BookObjects
