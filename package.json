@@ -5,6 +5,10 @@
   "main": "index.js",
   "scripts": {
     "start": "node server",
+    "db:reset": "npm run db:drop && npm run db:create && npm run db:migrate",
+    "db:drop": "dropdb ormnomnom-example",
+    "db:create": "createdb ormnomnom-example",
+    "db:migrate": "db-migrate up --config=db/db-migrate-config.js",
     "posttest": "standard --fix"
   },
   "repository": {
@@ -19,11 +23,15 @@
   },
   "homepage": "https://github.com/ashleygwilliams/ormnomnom-express-example#readme",
   "dependencies": {
+    "bluebird": "^3.5.1",
+    "dotenv": "^4.0.0",
     "express": "^4.16.2",
     "ormnomnom": "^3.1.0",
     "pg": "^7.3.0"
   },
   "devDependencies": {
+    "db-migrate": "^0.10.0-beta.24",
+    "db-migrate-pg": "^0.2.5",
     "standard": "^10.0.3"
   }
 }
