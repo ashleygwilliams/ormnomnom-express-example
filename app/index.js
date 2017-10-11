@@ -1,7 +1,7 @@
 const express = require('express')
 const app = express()
 
-const BookObjects = require('./models/book').BookObjects
+const Book = require('./models/book')
 
 app.get('/', function (req, res) {
   const msg = { 'message': 'hello' }
@@ -9,18 +9,18 @@ app.get('/', function (req, res) {
 })
 
 app.get('/books', function (req, res) {
-  BookObjects.all().then(books => {
+  Book.objects.all().then(books => {
     res.send(books)
   })
 })
 
 app.get('/books/:id', function (req, res) {
-  BookObjects.get({
+  Book.objects.get({
     id: req.params.id
   }).then(book => {
     res.send(book)
   })
-  .catch(BookObjects.NotFound, res.status(404).send())
+  .catch(Book.objects.NotFound, res.status(404).send())
 })
 
 module.exports = app

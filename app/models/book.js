@@ -16,4 +16,6 @@ const BookObjects = orm(Book, {
   byline: orm.joi.string()
 })
 
-module.exports = { Book, BookObjects }
+Book.objects = BookObjects
+
+module.exports = Book
