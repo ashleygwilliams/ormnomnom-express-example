@@ -1,0 +1,29 @@
+{
+  "name": "ormnomnom-express-example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server",
+    "posttest": "standard --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ashleygwilliams/ormnomnom-express-example.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ashleygwilliams/ormnomnom-express-example/issues"
+  },
+  "homepage": "https://github.com/ashleygwilliams/ormnomnom-express-example#readme",
+  "dependencies": {
+    "express": "^4.16.2",
+    "ormnomnom": "^3.1.0",
+    "pg": "^7.3.0"
+  },
+  "devDependencies": {
+    "standard": "^10.0.3"
+  }
+}
