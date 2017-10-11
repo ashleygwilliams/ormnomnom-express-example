@@ -2,8 +2,9 @@ const Promise = require('bluebird')
 const orm = require('ormnomnom')
 const { Pool } = require('pg')
 
+var pool = new Pool()
+
 orm.setConnection(function () {
-  const pool = new Pool()
   const deferred = Promise.defer()
   pool.connect((err, connection, release) => {
     if (err) {
