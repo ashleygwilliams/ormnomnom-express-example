@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node server",
+    "db:seed": "node seeds",
     "db:reset": "npm run db:drop && npm run db:create && npm run db:migrate",
     "db:drop": "dropdb ormnomnom-example",
     "db:create": "createdb ormnomnom-example",
