@@ -5,7 +5,12 @@ const Book = require('./models/book')
 const Author = require('./models/author')
 
 app.get('/', function (req, res) {
-  const msg = { 'message': 'hello' }
+  const msg = { 'routes': [
+    '/books',
+    '/books/:id',
+    '/authors',
+    '/authors/:id'
+  ]}
   res.send(msg)
 })
 
