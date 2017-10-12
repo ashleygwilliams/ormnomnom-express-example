@@ -2,6 +2,7 @@ const express = require('express')
 const app = express()
 
 const Book = require('./models/book')
+const Author = require('./models/author')
 
 app.get('/', function (req, res) {
   const msg = { 'message': 'hello' }
@@ -22,4 +23,17 @@ app.get('/books/:id', function (req, res) {
   })
 })
 
+app.get('/authors', function (req, res) {
+  Author.objects.all().then(authors => {
+    res.send(authors)
+  })
+})
+
+app.get('/authors/:id', function (req, res) {
+  Author.objects.get({
+    id: req.params.id
+  }).then(author => {
+    res.send(author)
+  })
+})
 module.exports = app
