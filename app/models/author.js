@@ -11,7 +11,7 @@ class Author {
 const AuthorObjects = orm(Author, {
   id: orm.joi.number(),
   first_name: orm.joi.string(),
-  last_name: orm.joi.string().required(),
+  last_name: orm.joi.string().required()
 })
 
 Author.objects = AuthorObjects
