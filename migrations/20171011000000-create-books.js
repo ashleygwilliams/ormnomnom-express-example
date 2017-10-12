@@ -4,7 +4,7 @@ var type = dbm.dataType
 exports.up = function (db, callback) {
   db.createTable('books', {
     columns: {
-      id: { type: type.INTEGER },
+      id: { type: type.INTEGER, primaryKey: true, autoIncrement: true },
       title: { type: type.STRING },
       publish_date: { type: type.DATE_TIME },
       author: { type: type.STRING }
