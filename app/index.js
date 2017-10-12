@@ -20,7 +20,6 @@ app.get('/books/:id', function (req, res) {
   }).then(book => {
     res.send(book)
   })
-  .catch(Book.objects.NotFound, res.status(404).send())
 })
 
 module.exports = app
